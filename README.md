@@ -1,91 +1,93 @@
-# Zeus
-[![Theme](https://img.shields.io/badge/Theme-Zeus-blue)]()
-[![Theme](https://img.shields.io/badge/Version-1.0.0-yellow)]()
-[![Project](https://img.shields.io/badge/Project-Initial_WordPress_Theme-green)](https://github.com/roots/sage)
+# Instalação e Comandos
 
-Zeus is a WordPress starter theme with a modern development workflow. Powered by [Sage](https://github.com/roots/sage)
+## Tecnologias
 
-## Features
+* Aproveite o poder do [Laravel](https://laravel.com) e seus pacotes disponíveis graças ao [Acorn](https://github.com/roots/acorn).
+* Modelagem de temas limpa e eficiente utilizando [Laravel Blade](https://laravel.com/docs/master/blade).
+* Suporte para [Browsersync](http://www.browsersync.io) junto com compilação, concatenação e minificação de ativos com o [Laravel Mix](https://github.com/JeffreyWay/laravel-mix).
+* Suporte imediato para [TailwindCSS](https://tailwindcss.com) e [jQuery](https://jquery.com).
+* Um ponto de partida limpo para estilos de tema usando [Sass](https://sass-lang.com).
 
-* Sass for stylesheets
-* Modern JavaScript
-* [Webpack](https://webpack.github.io/) for compiling assets, optimizing images, and concatenating and minifying files
-* [Browsersync](http://www.browsersync.io/) for synchronized browser testing
-* [Blade](https://laravel.com/docs/5.6/blade) as a templating engine
-* [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
-* CSS framework (optional): [Bootstrap 4](https://getbootstrap.com/), [Bulma](https://bulma.io/), [Foundation](https://foundation.zurb.com/), [Tachyons](http://tachyons.io/), [Tailwind](https://tailwindcss.com/)
+## Requerimentos
 
+Certifique-se de que todas as dependências foram instaladas antes de prosseguir:
 
-## Requirements
-
-Make sure all dependencies have been installed before moving on:
-
-* [WordPress](https://wordpress.org/) >= 4.7
-* [PHP](https://secure.php.net/manual/en/install.php) >= 7.1.3 (with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled)
-* [Composer](https://getcomposer.org/download/)
-* [Node.js](http://nodejs.org/) >= 8.0.0
+* [WordPress](https://wordpress.org/) &gt;= 5.4
+* [PHP](https://secure.php.net/manual/en/install.php) &gt;= 7.3.0 \(with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled\)
+* [Node.js](http://nodejs.org/) &gt;= 12.14.0
 * [Yarn](https://yarnpkg.com/en/docs/install)
 
+## Começando um novo projeto
 
-## Theme structure
+Para comerçarmos precisamos baixar a última versão do tema inicial com o [**git**](https://git-scm.com), neste [**repositório**](https://github.com/lucasuxui/zeus).
 
-```shell
-themes/your-theme-name/   # → Root of your Sage based theme
-├── app/                  # → Theme PHP
-│   ├── Controllers/      # → Controller files
-│   ├── admin.php         # → Theme customizer setup
-│   ├── filters.php       # → Theme filters
-│   ├── helpers.php       # → Helper functions
-│   └── setup.php         # → Theme setup
-├── composer.json         # → Autoloading for `app/` files
-├── composer.lock         # → Composer lock file (never edit)
-├── dist/                 # → Built theme assets (never edit)
-├── node_modules/         # → Node.js packages (never edit)
-├── package.json          # → Node.js dependencies and scripts
-├── resources/            # → Theme assets and templates
-│   ├── assets/           # → Front-end assets
-│   │   ├── config.json   # → Settings for compiled assets
-│   │   ├── build/        # → Webpack and ESLint config
-│   │   ├── fonts/        # → Theme fonts
-│   │   ├── images/       # → Theme images
-│   │   ├── scripts/      # → Theme JS
-│   │   └── styles/       # → Theme stylesheets
-│   ├── functions.php     # → Composer autoloader, theme includes
-│   ├── index.php         # → Never manually edit
-│   ├── lib/              # → All Custom PHP Here
-│   │   ├── admin         # → Custom WP-Login
-│   │   ├── cpt           # → Custom Post Types & Taxonomies
-│   │   ├── metabox       # → Metabox Fields (WP Plugin)
-│   ├── screenshot.png    # → Theme screenshot for WP admin
-│   ├── style.css         # → Theme meta information
-│   └── views/            # → Theme templates
-│       ├── layouts/      # → Base templates
-│       └── partials/     # → Partial templates
-└── vendor/               # → Composer packages (never edit)
+{% code title="/wp-content/themes/" %}
+```
+$ git clone https://github.com/lucasuxui/zeus.git
+```
+{% endcode %}
+
+{% hint style="info" %}
+ O Projeto é público, então não será necessária a utilização de chaves [ssh](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) ou semelhantes.
+{% endhint %}
+
+## Instalação de Dependências
+
+* Execute o comando `yarn` do diretório do tema para instalar dependências
+* Atualize em `resources/assets/config.json` as configurações:
+  * `devUrl` deve refletir seu nome de host de desenvolvimento local
+  * `publicPath` deve refletir sua estrutura de pastas do WordPress, o que geralmente se inicia por `/wp-content/themes/nome-do-tema`
+
+## Comandos do projeto
+
+* `yarn start` 
+  * Compila os arquivos quando forem feitas alterações e inicia a sessão do Browsersync
+* `yarn build`
+  * Compila e otimiza os arquivos em seu diretório de ativos
+* `yarn build:production` 
+  * Compila arquivos para produção
+
+Mais detalhes de cada comando abaixo:
+
+{% tabs %}
+{% tab title="yarn start" %}
+```text
+$ yarn start
 ```
 
-## Theme setup
+Este comando cria as pastas `dist` e `.cache-loader` que são responsáveis pelo _**output**_ do que veremos na nossa aplicação, estes são, resultantes da pasta `assets` **arquivos compilados** .
 
-Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
+{% hint style="info" %}
+Neste comando não é gerado arquivo em `.css` pois este já é compilado e injetado no cache de seu browser.
+{% endhint %}
 
-## Theme development
+![Exemplo de pastas/arquivos criados](.gitbook/assets/screenshot_1.png)
+{% endtab %}
 
-* Run `yarn` from the theme directory to install dependencies
-* Update `resources/assets/config.json` settings:
-  * `devUrl` should reflect your local development hostname
-  * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/sage`)
+{% tab title="yarn build" %}
+```text
+$ yarn build
+```
 
-### Build commands
+Este comando cria uma nova pasta `dist` , removendo a antiga no comando anterior, mas agora com todo o código compilado/minificado pronto para uso.
 
-* `yarn start` — Compile assets when file changes are made, start Browsersync session
-* `yarn build` — Compile and optimize the files in your assets directory
-* `yarn build:production` — Compile assets for production
+![Exemplo de pastas/arquivos compilados e minificados](.gitbook/assets/screenshot_2.png)
+{% endtab %}
 
-## Documentation
+{% tab title="yarn build:production" %}
+```text
+$ yarn build:production
+```
 
-* [Sage documentation](https://roots.io/sage/docs/)
-* [Controller documentation](https://github.com/soberwp/controller#usage)
+Este comando faz o mesmo processo do anterior, mas com umas mudanças, gerando um arquivo único com um código bem mais minificado possível.
 
-## Customized by
+{% hint style="info" %}
+`assets.json`é o arquivo que aponta os respectivos ids únicos dos arquivos para os arquivos originais.
+{% endhint %}
 
-* [Lucas Souza](https://www.linkedin.com/in/lucasuxui/)
+![](.gitbook/assets/screenshot_3.png)
+{% endtab %}
+{% endtabs %}
+
+
+
