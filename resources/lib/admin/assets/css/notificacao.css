@@ -1,0 +1,171 @@
+/* body{
+    background: #2196f3 !important;
+} */
+
+#banner_expiracao {
+    color:#0073b2;
+    cursor:pointer;
+}
+
+.barNotification__close {
+    background: rgba(255, 255, 255, 0.93);
+    color: black;
+    border: 1px solid #fff!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: -31px;
+    border-right: 0;
+    font-weight: 900;
+}
+
+.barNotification__bar {
+    margin: 15px 0;
+}
+
+.barNotification__status {
+    display: flex;
+}
+
+.barNotification-status__validos, .barNotification-status__expirando, .barNotification-status__expirados {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.barNotification-status__green {
+    width: 15px;
+    height: 15px;
+    background: #4caf50;
+    color: #006304;
+    margin-right: 5px;
+}
+
+.barNotification-status__yellow {
+    width: 15px;
+    height: 15px;
+    background: #fee084;
+    color: #006304;
+    margin-right: 5px;
+}
+
+.barNotification-status__red {
+    width: 15px;
+    height: 15px;
+    background: #f44336;
+    color: #006304;
+    margin-right: 5px;
+}
+
+.barNotification-status__title {
+    font-size: 13px;
+    color: #a1a1a1;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+.barNotification-all__head {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.barNotification-all__title {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    color: #a1a1a1;
+    display: flex;
+    align-items: center;
+}
+
+.barNotification-all__text { 
+    display: flex;
+    flex-direction: column;
+    margin: 0 8px 0 0;
+}
+
+
+.barNotification-all__qtd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 36px;
+    padding-bottom: 2px;
+    font-size: 11px;
+}
+
+.barNotification-all__qtd--validos {
+    background: #4caf50;
+    color: #fff;    
+}
+.barNotification-all__qtd--expirando {
+    background: #fee084;
+    color: #000;
+}
+.barNotification-all__qtd--expirado {
+    background: #f44336;
+    color: #fff;
+}
+
+.barNotification-all__total {
+    background: black;
+    color: #fff;
+    font-size: 7px;
+    height: 12px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.validos-banners {
+    margin-left: 2px!important;
+    background-color: #4caf50!important;
+}
+.expirando-banners {
+    margin-left: 2px!important;
+    background-color: #c2a300!important;
+}
+.expirado-banners {
+    background-color: #f44336!important;
+    margin-left: 2px!important;
+}
+
+.barNotification-all__list-item--validos {
+    background: #4caf50;
+    color: #fff;  
+    padding: 4px;
+}    
+.barNotification-all__list-item--expirando {
+    background: #fee084;
+    color: #000;  
+    padding: 4px;
+}  
+.barNotification-all__list-item--expirados {
+    background: #f44336;
+    color: #fff;  
+    padding: 4px;
+}   
+
+.barNotification-all__list-postname {
+    margin: 0;
+}
