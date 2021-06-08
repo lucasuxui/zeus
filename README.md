@@ -3,7 +3,7 @@
 [![Theme](https://img.shields.io/badge/Version-1.0.0-yellow)]()
 [![Project](https://img.shields.io/badge/Project-Initial_WordPress_Theme-green)](https://github.com/roots/sage)
 
-Zeus is a WordPress starter theme with a modern development workflow. Powered by [Sage]()
+Zeus is a WordPress starter theme with a modern development workflow. Powered by [Sage](https://github.com/roots/sage)
 
 ## Features
 
@@ -89,9 +89,3 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 ## Customized by
 
 * [Lucas Souza](https://www.linkedin.com/in/lucasuxui/)
-
-## Zeus is in
-
-We make it happen.
-
-<a href="https://visualpage.com/"><img src="https://i.imgur.com/Lh3Bv1l.png" alt="VisualPage" width="200" height="150"></a> <a href="https://www.convertte.com.br"><img src="https://i.imgur.com/1pvbGHL.png" alt="Convertte" width="200" height="150"></a>
