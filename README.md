@@ -14,6 +14,7 @@ Certifique-se de que todas as dependências foram instaladas antes de prosseguir
 
 * [WordPress](https://wordpress.org/) &gt;= 5.4
 * [PHP](https://secure.php.net/manual/en/install.php) &gt;= 7.3.0 \(with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled\)
+* [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) &gt;= 12.14.0
 * [Yarn](https://yarnpkg.com/en/docs/install)
 
@@ -34,6 +35,7 @@ $ git clone https://github.com/lucasuxui/zeus.git
 ## Instalação de Dependências
 
 * Execute o comando `yarn` do diretório do tema para instalar dependências
+* Execute o comando `composer install` do diretório do tema para instalar dependências do [sage](https://github.com/roots/sage)
 * Atualize em `resources/assets/config.json` as configurações:
   * `devUrl` deve refletir seu nome de host de desenvolvimento local
   * `publicPath` deve refletir sua estrutura de pastas do WordPress, o que geralmente se inicia por `/wp-content/themes/nome-do-tema`
